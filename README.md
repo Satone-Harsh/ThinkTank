@@ -1,27 +1,37 @@
-# ThinkTank
+# MEAN Stack Brainstorming Collaboratory
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
+This project is a MEAN (MongoDB, Express.js, Angular, Node.js) stack-based application that serves as a collaborative platform for brainstorming. Users can read ideas, login/register, and interact with the platform by publishing, editing, and deleting ideas. Additionally, users have the ability to edit their accounts.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **User Authentication:**
 
-## Code scaffolding
+  - Users can register or log in securely to access the platform.
+  - Passwords are securely hashed and stored.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Idea Management:**
 
-## Build
+  - View a list of ideas contributed by users.
+  - Publish new ideas with a title, description, and tags.
+  - Edit or delete their own ideas.
+  - Collaborate on ideas with other users.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **User Account Management:**
+  - Users can edit their account details, including username, email, and password.
 
-## Running unit tests
+## Technologies Used
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **MongoDB:**
 
-## Running end-to-end tests
+  - Database for storing user information and ideas.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Express.js:**
 
-## Further help
+  - Backend server framework for handling HTTP requests and managing routes.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Angular:**
+
+  - Frontend framework for building the user interface and handling user interactions.
+
+- **Node.js:**
+  - Server-side JavaScript runtime for executing server code.
