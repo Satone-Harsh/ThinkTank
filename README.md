@@ -35,3 +35,10 @@ This project is a MEAN (MongoDB, Express.js, Angular, Node.js) stack-based appli
 
 - **Node.js:**
   - Server-side JavaScript runtime for executing server code.
+
+![image](https://github.com/Satone-Harsh/ThinkTank/assets/97821650/cacb54ad-0627-4d28-a7a0-7777b660bb1d)
+![image](https://github.com/Satone-Harsh/ThinkTank/assets/97821650/7da967e1-797b-4ea3-86a0-c3d2b59e35fe)
+![image](https://github.com/Satone-Harsh/ThinkTank/assets/97821650/b399f6fb-15da-4e35-b26f-16a446ecc842)
+![image](https://github.com/Satone-Harsh/ThinkTank/assets/97821650/48fda8c7-dbdb-4d98-a77c-9ac436c26aa6)
+
+
