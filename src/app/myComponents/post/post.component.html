@@ -1,0 +1,14 @@
+<div class="post">
+  <img class="post-img" src="{{PF+post.photo.slice(13)}}" alt="post image"/>
+    
+    <div class="post-info">
+        <a class="link post-title" (click)="redirect()" >{{post.title}}</a><hr/>
+        <div class="gre">
+          <span class="post-date">~{{post.username}}</span>
+          <span class="post-date">{{post.createdAt.toString().slice(0,10)}}</span>
+        </div>
+    </div>
+    <p class="post-desc">     
+      {{post.desc}}
+    </p>
+    </div>

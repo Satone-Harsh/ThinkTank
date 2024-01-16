@@ -1,0 +1,28 @@
+<app-topbar></app-topbar>
+<div class="settings">
+    <div class="wrapper">
+        <div class="title">
+        <span class="update-title">Update your account</span>
+        <span class="delete-title" (click)="handleDelete()">Delete account</span>
+        </div>
+        <form class="settings-form" (ngSubmit)="onSubmit()">
+            <div class="profile">
+                <img
+                class="settings-image"
+                src="assets/proffff.png"
+                />
+            </div>
+            <label>Username</label>
+            <input type="text" [(ngModel)]="username" name="username" id="username" placeholder="username" />
+            
+            <label>Email</label>
+            <input type="Email" [(ngModel)]="email" name="email" id="email" placeholder="email"/>
+            
+            <label>Password</label>
+            <input type="password" [(ngModel)]="password" name="password" id="password"/>
+            
+            <button class="submit" type="submit">Update</button>
+            <span style="color:green; margin-left: 90px;" *ngIf="done">Profile has been Updated ✅</span>
+        </form>
+    </div>
+</div>

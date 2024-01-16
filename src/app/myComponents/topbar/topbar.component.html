@@ -1,0 +1,23 @@
+<div class="top" id="phone-warning">
+    <div class="top-left">
+      <h2 class="logo" routerLink="/">ThinkTank💡
+      </h2>
+    </div>
+    <div class="top-centre">
+      <ul class="top-list">
+      </ul>
+    </div>
+    <div class="top-right">
+      <div class="logged" *ngIf="logged; else elseBlock">
+        <a routerLink="/settings" class="link top-list-item">Hello, {{name}} </a>
+        <a routerLink="/write" class="link top-list-item">WRITE</a>
+        <a routerLink="/" class="link top-list-item" (click)="handleLogout()">LOGOUT</a>
+      </div>
+      <ng-template #elseBlock>
+        <a routerLink="/login" class="link top-list-item">LOGIN</a>
+        <a routerLink="/register" class="link top-list-item">REGISTER</a>
+        <a routerLink="/login" class="link top-list-item">WRITE</a>
+      </ng-template>
+    </div>
+  </div>
+  

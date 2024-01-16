@@ -1,0 +1,33 @@
+<app-topbar></app-topbar>
+<div class='single-post'>
+    <div class="wrapper">
+
+        <img
+            src="{{PF+response.photo.slice(13)}}"
+            class="wrapper-image"
+            alt="wrapper"
+        />
+
+        <h1 class="single-title" *ngIf="!updateMode">
+        {{response.title}}
+        <div class="edit" *ngIf="auth">
+        <i class="icon fa-sharp fa-regular fa-pen-to-square" (click)="editPost()"></i>
+        <i class="icon fa-sharp fa-solid fa-trash"(click)="deletePost()"></i>
+        </div>
+        </h1>
+
+        <input class="title-inp" [(ngModel)]="response.title" name="title" id="title" value={{response.title}} autoFocus *ngIf="updateMode"/>
+    
+        <div class="info">
+        <span class="author">Author: 
+        <a routerLink="">
+        <b>{{response.username}}</b>
+        </a>
+         </span>
+        <span class="date">{{response.createdAt.toString().slice(0,10)}}</span>    
+    </div>
+    <p class="desc" *ngIf="!updateMode">{{response.desc}}</p> 
+    <textarea value={{response.desc}} *ngIf="updateMode" [(ngModel)]="response.desc" name="desc" id="desc" class="desc-inp" ></textarea>   
+    <button *ngIf="updateMode" class="update-submit" (click)="putUpdate()">Update</button>       
+    </div>
+</div>

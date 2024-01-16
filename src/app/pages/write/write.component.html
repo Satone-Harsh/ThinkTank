@@ -1,0 +1,22 @@
+<app-topbar></app-topbar>
+
+<div class="write">    
+    <img
+    [src]="imageBlobUrl"
+    alt="chosen-image"
+    class="write-image" *ngIf="img"/>
+
+    <form class="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label [attr.for]="fileInput?.id">
+            <i class="add-icon fa-solid fa-plus"></i>
+            </label>
+            <input type="file" #fileInput (change)="onFileSelected($event)" id="file-input" style="display:none"/>
+            <input type="text" [(ngModel)]="title" name="title" id="title" placeholder="Title" class="write-input"/>
+        </div>
+        <div class="form-group">
+            <textarea [(ngModel)]="desc" name="desc" id="desc" placeholder="Tell your story..." type="text" class="write-input write-text"></textarea>
+        </div>
+        <button class="write-submit" type="submit">Publish</button>
+    </form>
+</div>

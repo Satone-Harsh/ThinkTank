@@ -1,0 +1,13 @@
+<app-topbar></app-topbar>
+<div class="loginn">
+    <span class="login-title">Login</span>
+        <form class="login-form" (ngSubmit)="onSubmit()">
+            <input type="text" [(ngModel)]="username" name="username" id="username" placeholder="Enter your username.." />
+            <input type="password" [(ngModel)]="pass" name="pass" id="pass" placeholder="Enter your password.." />
+            <button class="login-button">Login</button>
+            <span class="login-succ" *ngIf="err">Invalid Credentials⚠️</span>
+        </form>
+        <button class="l-register-button">
+        <a routerLink="/register" class="link">Register</a>
+        </button>
+    </div>

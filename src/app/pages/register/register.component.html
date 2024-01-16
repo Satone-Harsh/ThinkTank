@@ -1,0 +1,14 @@
+<app-topbar></app-topbar>
+<div class="registerr">
+    <span class="register-title">Register</span>
+        <form class="register-form" (ngSubmit)="onSubmit()">
+        <input type="text" [(ngModel)]="username" name="username" id="username" placeholder="Enter Username"/>
+        <input type="email" [(ngModel)]="email" name="email" id="email" placeholder="Enter your email.."/>
+            <input type="password" [(ngModel)]="pass" name="pass" id="pass" placeholder="Enter your password.."/>
+            <button class="register-button" type="submit">Register</button>
+            <span style="color:white; margin-top:15px; text-align:center" *ngIf="err">Something is wrong!!!</span>
+        </form>
+        <button class="r-login-button">
+        <a routerLink="/login" class="link">Login</a>
+        </button>
+    </div>
