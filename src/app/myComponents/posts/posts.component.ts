@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import axios from 'axios';
@@ -11,14 +12,14 @@ import { Post } from 'src/app/post';
 export class PostsComponent {
 response!:Post[];
 
-constructor(private router: Router){
+constructor(private router: Router, private http:HttpClient){
   
-  const fetch= async()=>{
-    const temp= await axios.get("http://localhost:5000/api/post");
-    this.response=temp.data;
-    console.log(this.response);
-  }
-  fetch();
+  http.get<Post[]>("http://localhost:5000/api/post")
+  .subscribe(
+    (res:Post[])=>{
+      this.response=res;
+      console.log(this.response);
+  })
 }
 
 }

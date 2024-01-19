@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import axios from 'axios';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +15,7 @@ export class RegisterComponent {
   pass!:string;
   err:boolean=false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private http:HttpClient) {}
 
   async onSubmit(){
     const user={
@@ -23,13 +25,15 @@ export class RegisterComponent {
     };
     console.log(user);
     
-    try{
-      const response=await axios.post("http://localhost:5000/api/auth/register",user);
-      console.log("sucess for registering");
-      this.router.navigate(['/login']);
-    }catch(e){
-      this.err=true;
-      console.log(e);
-    }
+      this.http.post<User>("http://localhost:5000/api/auth/register",user).subscribe({
+        next: (res)=>{
+        console.log("sucess for registering");
+        this.router.navigate(['/login']);
+      },
+        error:(e)=>{
+        console.log(e);
+        this.err=true;
+      }});
+  
   }
 }

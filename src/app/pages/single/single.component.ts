@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import axios from 'axios';
@@ -20,7 +21,7 @@ export class SingleComponent {
   title!:string;
   desc!:string;
 
-  constructor(private router: Router ,private route: ActivatedRoute){
+  constructor(private router: Router ,private route: ActivatedRoute ,private http:HttpClient){
     console.log("onIt");
     let id=this.route.snapshot.paramMap.get("id");
     console.log(id);

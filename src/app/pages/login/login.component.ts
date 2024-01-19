@@ -1,6 +1,9 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import axios from 'axios';
+import { delay } from 'rxjs';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +15,7 @@ export class LoginComponent {
   pass!:string;
   err:boolean=false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,private http:HttpClient) {}
 
   async onSubmit(){
     const user={
@@ -21,16 +24,19 @@ export class LoginComponent {
     };
     console.log(user);
     
-    try{
-      const response=await axios.post("http://localhost:5000/api/auth/login",user);
-      console.log(response.data);      
-      localStorage.setItem('userData', JSON.stringify(response.data.username));
-      localStorage.setItem('user_id', JSON.stringify(response.data._id));
-      console.log("sucess for logging in");
-      this.router.navigate(['/']);
-    }catch(e){
-      this.err=true;
-      console.log(e);
-    }
+      this.http.post<User>("http://localhost:5000/api/auth/login",user)
+      .subscribe(
+        async (res:User)=>{
+          console.log(res);
+            localStorage.setItem('userData', JSON.stringify(res.username));
+            localStorage.setItem('user_id', JSON.stringify(res._id));
+            // await new Promise<void>((resolve) => setTimeout(resolve, 500));
+            console.log("sucess for logging in");
+            this.router.navigate(['/']);
+      },(e)=>{
+        this.err=true;
+        console.log(e);
+      })
+    
   }
 }

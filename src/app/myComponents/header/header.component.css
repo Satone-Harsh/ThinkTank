@@ -8,21 +8,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Lora', serif;
+    font-family: 'Roboto', serif;
     color: #444;
 }
 
 .header-title-small{
     position: absolute;
-    top: 18%;
-    font-size: 20px;
+    top: 38%;
+    font-size: 25px;
     z-index: 1;
 }
 
 .header-title-large{
     position: absolute;
-    top: 20%;
-    font-size: 100px;
+    top: 40%;
+    font-size: 125px;
     z-index: 1;
 }
 
@@ -30,7 +30,7 @@
     opacity: 0.8;
     width: 100%;
     height: 350px;
-    margin-top: 12%;
+    margin-top: 9%;
     object-fit: cover;
     background: linear-gradient(to bottom right, transparent 49.5%, white 49.5%, white 50.5%, transparent 50.5%);
     transform: skewY(-20deg);
